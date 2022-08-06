@@ -13,14 +13,14 @@
     
         <form action="register_db.php" method="post" class="form-horizontal my-5">
         <div class="form-group">
-            <label for="username" class="col-sm-3 control-label">Username</label>
+            <label for="username" class="col-sm-3 control-label">ชื่อ-นามสกุล</label>
             <div class="col-sm-12">
                 <input type="text" name="txt_username" class="form-control" required placeholder="Enter username">
             </div>
         </div>
         
         <div class="form-group">
-            <label for="email" class="col-sm-3 control-label">Email</label>
+            <label for="email" class="col-sm-3 control-label">อีเมล์</label>
             <div class="col-sm-12">
                 <input type="text" name="txt_email" class="form-control" required placeholder="Enter email">
             </div>
@@ -31,7 +31,7 @@
         </div>
 
         <div class="form-group">
-            <label for="phone_number" class="col-sm-3 control-label">phone number</label>
+            <label for="phone_number" class="col-sm-3 control-label">เบอร์โทรศัพท์</label>
             <div class="col-sm-12">
                 <input type="text" name="txt_phone_number" class="form-control" required placeholder="phone_number">
             </div>
@@ -39,7 +39,7 @@
 
 
         <div class="form-group">
-            <label for="line_id" class="col-sm-3 control-label">line_id</label>
+            <label for="line_id" class="col-sm-3 control-label">ไลน์ไอดี</label>
             <div class="col-sm-12">
                 <input type="text" name="txt_line_id" class="form-control" required placeholder="line_id">
             </div>
@@ -64,12 +64,6 @@
                 <input type="submit" name="btn_register" class="btn btn-primary" style="auto" value="Register">
             </div>
         </div>
-        </div>
-        <div class="form-group text-center">
-            <div class="col-sm-12 mt-3">
-                Already have an account ? 
-                <p><a href="index.php">Login</a></p>
-            </div>
         </div>
         </form>
     </div>

@@ -82,7 +82,7 @@
             <thead>
                 <tr>
                     <th scope="col">ไอดี</th>
-                    <th scope="col">ชื่อ</th>
+                    <th scope="col">ชื่อ-นามสกุล</th>
                     <th scope="col">อีเมล์</th>
                     <th scope="col">เบอร์โทรศัพท์</th>
                     <th scope="col">ไลน์ไอดี</th>
