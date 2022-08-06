@@ -15,25 +15,25 @@
         <div class="form-group">
             <label for="username" class="col-sm-3 control-label">ชื่อ-นามสกุล</label>
             <div class="col-sm-12">
-                <input type="text" name="txt_username" class="form-control" required placeholder="Enter username">
+                <input type="text" name="txt_username" class="form-control" required placeholder="กรุณาใส่ชื่อ-นามสกุล">
             </div>
         </div>
         
         <div class="form-group">
             <label for="email" class="col-sm-3 control-label">อีเมล์</label>
             <div class="col-sm-12">
-                <input type="text" name="txt_email" class="form-control" required placeholder="Enter email">
+                <input type="text" name="txt_email" class="form-control" required placeholder="กรุณาใส่">
             </div>
         </div>
-        <label for="password" class="col-sm-3 control-label">Password</label>
+        <label for="password" class="col-sm-3 control-label">รหัสผ่าน</label>
         <div class="col-sm-12">
-            <input type="password" name="txt_password" class="form-control" required placeholder="Enter password">
+            <input type="password" name="txt_password" class="form-control" required placeholder="กรุณาใส่ รหัสผ่าน">
         </div>
 
         <div class="form-group">
             <label for="phone_number" class="col-sm-3 control-label">เบอร์โทรศัพท์</label>
             <div class="col-sm-12">
-                <input type="text" name="txt_phone_number" class="form-control" required placeholder="phone_number">
+                <input type="text" name="txt_phone_number" class="form-control" required placeholder="กรุณาใส่ เบอร์โทรศัพท์">
             </div>
         </div>
 
@@ -41,14 +41,14 @@
         <div class="form-group">
             <label for="line_id" class="col-sm-3 control-label">ไลน์ไอดี</label>
             <div class="col-sm-12">
-                <input type="text" name="txt_line_id" class="form-control" required placeholder="line_id">
+                <input type="text" name="txt_line_id" class="form-control" required placeholder="กรุณาใส่ ไลน์ไอดี">
             </div>
         </div>
         
 
         
         <div class="form-group">
-            <label for="type" class="col-sm-3 control-label">Select Type</label>
+            <label for="type" class="col-sm-3 control-label">ระดับสมาชิก</label>
             <div class="col-sm-12">
                 <select name="txt_role" class="form-control">
                     <option value="" selected="selected">- Select Role -</option>
