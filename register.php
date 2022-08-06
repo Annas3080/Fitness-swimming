@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="mt-3">Register Form</h1>
+        <h1 class="mt-3">สมัครสมาชิก</h1>
         <hr>
     
         <form action="register_db.php" method="post" class="form-horizontal my-5">
@@ -22,7 +22,7 @@
         <div class="form-group">
             <label for="email" class="col-sm-3 control-label">อีเมล์</label>
             <div class="col-sm-12">
-                <input type="text" name="txt_email" class="form-control" required placeholder="กรุณาใส่">
+                <input type="text" name="txt_email" class="form-control" required placeholder="กรุณาใส่ อีเมล์">
             </div>
         </div>
         <label for="password" class="col-sm-3 control-label">รหัสผ่าน</label>
