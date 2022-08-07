@@ -37,15 +37,20 @@
                                     $_SESSION['success'] = "Admin... Successfully Login...";
                                     header("location: admin/admin_home.php");
                                 break;
-                                case 'employee':
-                                    $_SESSION['employee_login'] = $email;
-                                    $_SESSION['success'] = "Employee... Successfully Login...";
-                                    header("location: employee/employee_home.php");
+                                case 'in_personnel':
+                                    $_SESSION['in_personnel_login'] = $email;
+                                    $_SESSION['success'] = "in_personnel... Successfully Login...";
+                                    header("location: in_personnel/in_personnel_home.php");
                                 break;
-                                case 'user':
-                                    $_SESSION['user_login'] = $email;
-                                    $_SESSION['success'] = "User... Successfully Login...";
-                                    header("location: user/user_home.php");
+                                case 'out_personnel':
+                                    $_SESSION['out_personnel_login'] = $email;
+                                    $_SESSION['success'] = "out_personnel... Successfully Login...";
+                                    header("location: out_personnel/out_personnel_home.php");
+                                break;
+                                case 'student':
+                                    $_SESSION['student_login'] = $email;
+                                    $_SESSION['success'] = "student... Successfully Login...";
+                                    header("location: student/student_home.php");
                                 break;
                                 default:
                                     $_SESSION['error'] = "Wrong email or password or role";

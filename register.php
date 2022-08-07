@@ -52,9 +52,10 @@
             <div class="col-sm-12">
                 <select name="txt_role" class="form-control">
                     <option value="" selected="selected">- Select Role -</option>
-                    <option value="admin">Admin</option>
-                    <option value="employee">Employee</option>
-                    <option value="user">User</option>
+                    <option value="admin">Admin</option>                    
+                    <option value="student">Student</option>
+                    <option value="in_personnel">In personnel</option>
+                    <option value="out_personnel">Out personnel</option>
                 </select>
             </div>
         </div>

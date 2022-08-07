@@ -6,16 +6,16 @@
         header("location: admin/admin_home.php");
     }
 
-    if (isset($_SESSION['employee_login'])) {
-        header("location: employee/employee_home.php");
+    if (isset($_SESSION['in_personnel_login'])) {
+        header("location: in_personnel/in_personnel_home.php");
     }
 
-    if (isset($_SESSION['user_login'])) {
-        header("location: user/user_home.php");
+    if (isset($_SESSION['student_login'])) {
+        header("location: student/student_home.php");
     }
     
-    if (isset($_SESSION['out_login'])) {
-        header("location: out/out_home.php");
+    if (isset($_SESSION['out_personnel_login'])) {
+        header("location: out_personnel/out_personnel_home.php");
     }
 
 ?>
@@ -78,9 +78,9 @@
                 <select name="txt_role" class="form-control">
                     <option value="" selected="selected">- Select Role -</option>
                     <option value="admin">Admin</option>
-                    <option value="employee">Employee</option>
-                    <option value="user">User</option>
-                    <option value="out">out</option>
+                    <option value="student">Student</option>
+                    <option value="in_personnel">In personnel</option>
+                    <option value="out_personnel">Out personnel</option>
                 </select>
             </div>
         </div>
