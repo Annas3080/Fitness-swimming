@@ -13,6 +13,12 @@
     
         <form action="register_db.php" method="post" class="form-horizontal my-5">
         <div class="form-group">
+            <label for="users_id" class="col-sm-3 control-label">รหัสผู้ใช้</label>
+            <div class="col-sm-12">
+                <input type="text" name="txt_users_id" class="form-control" required placeholder="กรุณาใส่รหัสผู้ใช้">
+            </div>
+        </div>
+        <div class="form-group">
             <label for="username" class="col-sm-3 control-label">ชื่อ-นามสกุล</label>
             <div class="col-sm-12">
                 <input type="text" name="txt_username" class="form-control" required placeholder="กรุณาใส่ชื่อ-นามสกุล">
@@ -27,7 +33,7 @@
         </div>
         <label for="password" class="col-sm-3 control-label">รหัสผ่าน</label>
         <div class="col-sm-12">
-            <input type="password" name="txt_password" class="form-control" required placeholder="กรุณาใส่ รหัสผ่าน">
+            <input type="password" name="txt_password" class="form-control" required placeholder="กรุณาใส่ รหัสผ่าน มากกว่า 5">
         </div>
 
         <div class="form-group">

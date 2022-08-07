@@ -5,6 +5,7 @@
     session_start();
 
     if (isset($_POST['btn_register'])) {
+        $users_id = $_POST['txt_users_id'];
         $username = $_POST['txt_username'];
         $email = $_POST['txt_email'];
         $phone_number =$_POST['txt_phone_number'];
@@ -12,7 +13,9 @@
         $password = $_POST['txt_password'];
         $role = $_POST['txt_role'];
 
-        if (empty($username)) {
+        if (empty($users_id)) {
+            $errorMsg[] = "Please enter users id";
+        } else if (empty($username)) {
             $errorMsg[] = "Please enter username";
         } else if (empty($email)) {
             $errorMsg[] = "Please enter email";
@@ -42,7 +45,8 @@
                 } else if ($row['email'] == $email) {
                     $errorMsg[] = "Sorry email already exists";
                 } else if (!isset($errorMsg)) {
-                    $insert_stmt = $db->prepare("INSERT INTO phplogin(username, email, password, role, phone_number, line_id) VALUES (:uname, :uemail, :upassword, :urole, :uphone_number, :uline_id)");
+                    $insert_stmt = $db->prepare("INSERT INTO phplogin(users_id, username, email, password, role, phone_number, line_id) VALUES (:uusers_id, :uname, :uemail, :upassword, :urole, :uphone_number, :uline_id)");
+                    $insert_stmt->bindParam(":uusers_id", $users_id);
                     $insert_stmt->bindParam(":uname", $username);
                     $insert_stmt->bindParam(":uemail", $email);
                     $insert_stmt->bindParam(":upassword", $password);

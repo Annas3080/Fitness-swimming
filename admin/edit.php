@@ -5,42 +5,25 @@
     require_once "../connection.php";
 
     if (isset($_POST['update'])) {
-
-        $users_id = $_POST['users_id'];
-
-        $id = $_POST['id'];
-        $firstname = $_POST['firstname'];
-        $lastname = $_POST['lastname'];
-
+        $username = $_POST['username'];
         $email = $_POST['email'];
-        $phone_number = $_POST['phone_number'];
-        $line_id = $_POST['line_id'];
-
+        $phone_number =$_POST['phone_number'];
+        $line_id =$_POST['line_id'];
         $role = $_POST['role'];
 
-
-        $sql = $conn->prepare("UPDATE users SET users_id = :users_id, firstname = :firstname, lastname = :lastname, email = :email, phone_number = :phone_number, line_id = :line_id, role = :role, img = :img WHERE id = :id");
-        
-        $sql->bindParam(":users_id", $users_id);
-
-        $sql->bindParam(":id", $id);
-        $sql->bindParam(":firstname", $firstname);
-        $sql->bindParam(":lastname", $lastname);
-
-        $sql->bindParam(":email", $email);
-        $sql->bindParam(":phone_number", $phone_number);
-        $sql->bindParam(":line_id", $line_id);
-
-        $sql->bindParam(":role", $role);
-        $sql->bindParam(":img", $fileNew);
+        $sql = $db ->prepare("UPDATE phplogin SET username = :uname, email = :uemail, phone_number = :uphone_number, line_id = :uline_id,  role = :urole ");
+        $sql->bindParam(":uname", $username);
+        $sql->bindParam(":uemail", $email);
+        $sql->bindParam(":uphone_number", $phone_number);
+        $sql->bindParam(":uline_id", $line_id);
+        $sql->bindParam(":urole", $role);
         $sql->execute();
-
         if ($sql) {
             $_SESSION['success'] = "Data has been updated successfully";
-            header("location: index.php");
+            header("location: admin_home.php");
         } else {
             $_SESSION['error'] = "Data has not been updated successfully";
-            header("location: index.php");
+            header("location: admin_home.php");
         }
     }
 
@@ -73,41 +56,39 @@
                         $data = $stmt->fetch();
                 }
             ?>
-
                 <div class="mb-3">
-                    <label for="id" class="col-form-label">ID:</label>
+                    <label for="id" class="col-sm-3 control-label">ID:</label>
                     <input type="text" readonly value="<?php echo $data['id']; ?>" required class="form-control" name="id" >
-                    <label for="username" class="col-form-label">ชื่อ:</label>
+                    <label for="username" class="col-sm-3 control-label">ชื่อ-นามสกุล</label>
                     <input type="text" value="<?php echo $data['username']; ?>" required class="form-control" name="username" >
-                    <input type="hidden" value="<?php echo $data['img']; ?>" required class="form-control" name="img2" >
-                </div>
-
-                <div class="mb-3">
-                    <label for="email" class="col-form-label">อีเมล์:</label>
-                    <input type="email" value="<?php echo $data['email']; ?>" required class="form-control" name="email">
                 </div>
                 <div class="mb-3">
-                    <label for="phone_number" class="col-form-label">เบอร์โทรศัพท์:</label>
+                    <label for="email" class="col-sm-3 control-label">อีเมล์:</label>
+                    <input type="text" value="<?php echo $data['email']; ?>" required class="form-control" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="phone_number" class="col-sm-3 control-label">เบอร์โทรศัพท์:</label>
                     <input type="text" value="<?php echo $data['phone_number']; ?>" required class="form-control" name="phone_number">
                 </div>
                 <div class="mb-3">
-                    <label for="line_id" class="col-form-label">ไลน์ไอดี:</label>
+                    <label for="line_id" class="col-sm-3 control-label">ไลน์ไอดี:</label>
                     <input type="text" value="<?php echo $data['line_id']; ?>" required class="form-control" name="line_id">
                 </div>
 
                 <div class="mb-3">
-                    <label for="type" class="col-form-label">Select Type</label>
+                    <label for="type" class="col-sm-3 control-label">Select Type</label>
                     <div class="col-sm-12">
-                        <select name="role" class="form-control">
-                            <option value="" selected="selected">- Select Role -</option>
-                            <option value="admin">Admin</option>
-                            <option value="employee">Employee</option>
-                            <option value="user">User</option>
+                    <select name="role" class="form-control">
+                        <option value="" selected="selected">- Select Role -</option>
+                        <option value="admin">Admin</option>
+                        <option value="student">Student</option>
+                        <option value="in_personnel">In personnel</option>
+                        <option value="out_personnel">Out personnel</option>
                         </select>
                     </div>
                     </div>
                 <hr>
-                <a href="index.php" class="btn btn-secondary">Go Back</a>
+                <a href="admin_home.php" class="btn btn-secondary">Go Back</a>
                 <button type="submit" name="update" class="btn btn-primary">Update</button>
             </form>
     </div>
