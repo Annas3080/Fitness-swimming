@@ -5,13 +5,17 @@
     require_once "../connection.php";
 
     if (isset($_POST['update'])) {
+        $id = $_POST['id'];
+        $users_id = $_POST['users_id'];
         $username = $_POST['username'];
         $email = $_POST['email'];
         $phone_number =$_POST['phone_number'];
         $line_id =$_POST['line_id'];
         $role = $_POST['role'];
 
-        $sql = $db ->prepare("UPDATE phplogin SET username = :uname, email = :uemail, phone_number = :uphone_number, line_id = :uline_id,  role = :urole ");
+        $sql = $db ->prepare("UPDATE phplogin SET users_id = :uusers_id, username = :uname, email = :uemail, phone_number = :uphone_number, line_id = :uline_id,  role = :urole where id = :uid");
+        $sql->bindParam(":uid", $id);
+        $sql->bindParam(":uusers_id", $users_id);
         $sql->bindParam(":uname", $username);
         $sql->bindParam(":uemail", $email);
         $sql->bindParam(":uphone_number", $phone_number);
@@ -59,6 +63,10 @@
                 <div class="mb-3">
                     <label for="id" class="col-sm-3 control-label">ID:</label>
                     <input type="text" readonly value="<?php echo $data['id']; ?>" required class="form-control" name="id" >
+                    <div class="mb-3">
+                    <label for="users_id" class="col-sm-3 control-label">รหัสผู้ใช้</label>
+                    <input type="text" value="<?php echo $data['users_id']; ?>" required class="form-control" name="users_id">
+                </div>
                     <label for="username" class="col-sm-3 control-label">ชื่อ-นามสกุล</label>
                     <input type="text" value="<?php echo $data['username']; ?>" required class="form-control" name="username" >
                 </div>

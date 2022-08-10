@@ -49,8 +49,7 @@
             <hr>
         
             <h3>
-                <?php if(isset($_SESSION['admin_login'])) { ?>
-                Welcome, <?php echo $_SESSION['admin_login']; }?>
+                Welcome
             </h3>
             <div class="col-md-20 d-flex justify-content-end">
             <a href="../register.php" class="btn btn-primary">Add User</a>

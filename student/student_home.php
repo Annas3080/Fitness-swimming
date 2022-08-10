@@ -35,9 +35,8 @@
             <h1>Student</h1>
             <hr>
         
-            <h3>
-                <?php if(isset($_SESSION['student_login'])) { ?>
-                Welcome, <?php echo $_SESSION['student_login']; }?>
+            <h3>    
+                Welcome
             </h3>
             <a href="../logout.php" class="btn btn-danger">Logout</a>
 
